@@ -31,11 +31,24 @@ public class Animals {
 }
 
 class Cat extends Animals {
+    static int listAnimals;
+    static int hungry;
+    static boolean satiety;
+    public boolean getSatiety;
+
     public Cat(String name) {
         super(name);
         listAnimals++;
     }
-    static int listAnimals;
+
+
+    public static int getHungry() {
+        return hungry;
+    }
+
+    public static void setHungry(int hungry) {  //Голод кота
+        Cat.hungry = hungry;
+    }
 
     @Override
     public void swimHappy() {
@@ -50,8 +63,29 @@ class Cat extends Animals {
         }
     }
 
-    public static int getListAnimals() {
+    public static int getListAnimals() {            //Выдает количество котов
         return listAnimals;
+    }
+    public static boolean getSatiety () {
+        return satiety;
+    }
+
+    public static void setSatiety(boolean satiety) {
+        Cat.satiety = satiety;
+    }
+
+    public void eating() {
+        int howManyFullBowl;
+        int hungry = Cat.hungry;
+        howManyFullBowl = BowlOfFood.getFull();
+        if (howManyFullBowl > hungry) {
+            BowlOfFood.setFull(howManyFullBowl - hungry);
+            Cat.setHungry(0);
+            Cat.setSatiety(true);
+            System.out.println("Сытость кота: "+Cat.getSatiety());
+        } else {
+            System.out.println("Кот не может поесть");
+        }
     }
 }
 
@@ -60,6 +94,7 @@ class Dog extends Animals {
         super(name);
         listAnimals++;
     }
+
     static int listAnimals;
 
     @Override
@@ -70,6 +105,7 @@ class Dog extends Animals {
             System.out.println(name + " не может проплыть " + swimDistant + " метров");
         }
     }
+
     public void runHappy() {
         if (runDistant <= 500 & runDistant > 0) {
             System.out.println(name + " пробежал " + runDistant + " метров");
