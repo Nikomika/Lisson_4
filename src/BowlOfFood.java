@@ -1,8 +1,10 @@
 public class BowlOfFood {
     static int full;
-public BowlOfFood (int full) {
-    BowlOfFood.full = full;
-}
+
+    public BowlOfFood(int full) {
+        BowlOfFood.full = full;
+    }
+
     public static int getFull() {
         return full;
     }

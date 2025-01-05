@@ -66,7 +66,8 @@ class Cat extends Animals {
     public static int getListAnimals() {            //Выдает количество котов
         return listAnimals;
     }
-    public static boolean getSatiety () {
+
+    public static boolean getSatiety() {
         return satiety;
     }
 
@@ -82,7 +83,7 @@ class Cat extends Animals {
             BowlOfFood.setFull(howManyFullBowl - hungry);
             Cat.setHungry(0);
             Cat.setSatiety(true);
-            System.out.println("Сытость кота: "+Cat.getSatiety());
+            System.out.println("Сытость кота: " + Cat.getSatiety());
         } else {
             System.out.println("Кот не может поесть");
         }

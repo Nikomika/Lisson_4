@@ -16,13 +16,12 @@ public class Main {
         barsFirst.setSwimDistant(3);
         barsFirst.runHappy();
         barsFirst.swimHappy();
+        Cat ymi1 = new Cat("Юмик");
+        BowlOfFood bowl1 = new BowlOfFood(30);
+        Cat.setHungry(4);
+        ymi1.eating();
         System.out.println(Animals.getListAnimals());
         System.out.println(Cat.getListAnimals());
         System.out.println(Dog.getListAnimals());
-        Cat ymi1 = new Cat("Юмик");
-        BowlOfFood bowl1 = new BowlOfFood(30);
-        ymi1.setHungry(4);
-        ymi1.eating();
-
     }
 }
