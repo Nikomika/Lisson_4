@@ -6,51 +6,47 @@ public class Animals {
 
     public Animals(String name) {
         this.name = name;
-        listAnimals++;
+        listAnimals++; //счетчик создание класса
     }
 
-    public void setRunDistant(int runDistant) {
+    public void setRunDistant(int runDistant) { // задание дистанции бега
         this.runDistant = runDistant;
     }
 
-    public void setSwimDistant(int swimDistant) {
+    public void setSwimDistant(int swimDistant) { // задание дистанции плаванья
         this.swimDistant = swimDistant;
     }
 
-    public void runHappy() {
+    public void runHappy() { // вывод сколько пробежао животное
         System.out.println(name + " пробежал " + runDistant + " метров");
     }
 
-    public void swimHappy() {
+    public void swimHappy() { // вывод сколько проплыло животное
         System.out.println(name + " проплыл " + swimDistant + " метров");
     }
 
-    public static int getListAnimals() {
+    public static int getListAnimals() { //Вывод количество созданных животных
         return listAnimals;
     }
+
 }
 
 class Cat extends Animals {
     static int listAnimals;
-    static int hungry;
-    static boolean satiety;
-    public boolean getSatiety;
+    static int hungry = 1; //голод кота (если больше нуля то кот голоден)
+    static boolean satiety = false; //сытость кота по умолчанию голоден
+
 
     public Cat(String name) {
         super(name);
         listAnimals++;
     }
 
-
-    public static int getHungry() {
-        return hungry;
-    }
-
     public static void setHungry(int hungry) {  //Голод кота
         Cat.hungry = hungry;
     }
 
-    @Override
+    @Override //Переопределение методов Бег и Плаванье
     public void swimHappy() {
         System.out.println(name + " не умеет плавать");
     }
@@ -67,7 +63,7 @@ class Cat extends Animals {
         return listAnimals;
     }
 
-    public static boolean getSatiety() {
+    public static boolean getSatiety() { //Показывает сытость кота
         return satiety;
     }
 
@@ -75,7 +71,7 @@ class Cat extends Animals {
         Cat.satiety = satiety;
     }
 
-    public void eating() {
+    public void eating() { // метод кот ест из миски
         int howManyFullBowl;
         int hungry = Cat.hungry;
         howManyFullBowl = BowlOfFood.getFull();
@@ -98,7 +94,7 @@ class Dog extends Animals {
 
     static int listAnimals;
 
-    @Override
+    @Override //Переопределение методов Бег и Плаванье
     public void swimHappy() {
         if (swimDistant <= 10 & runDistant > 0) {
             System.out.println(name + " проплыл " + swimDistant + " метров");
