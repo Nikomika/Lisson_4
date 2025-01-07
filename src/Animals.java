@@ -13,6 +13,7 @@ public class Animals {
         this.runDistant = runDistant;
     }
 
+
     public void setSwimDistant(int swimDistant) { // задание дистанции плаванья
         this.swimDistant = swimDistant;
     }
@@ -57,6 +58,10 @@ class Cat extends Animals {
         } else {
             System.out.println(name + " не может пробежать " + runDistant + " метров");
         }
+    }
+
+    public static int getHungry() {
+        return hungry;
     }
 
     public static int getListAnimals() {            //Выдает количество котов
